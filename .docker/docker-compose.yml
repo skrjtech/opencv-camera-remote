@@ -19,3 +19,4 @@ services:
         target: /root/.Xauthority.copy
       - ..:/ws
     network_mode: host
+    
