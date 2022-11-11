@@ -19,4 +19,4 @@ services:
         target: /root/.Xauthority.copy
       - ..:/ws
     network_mode: host
-    command: /bin/bash -c "cp ~/.Xauthority.copy ~/.Xauthority; chown root:root ~/.Xauthority;"
+    command: /bin/bash -c "cp ~/.Xauthority.copy ~/.Xauthority; chown root:root ~/.Xauthority; python -B /ws/camera.py"
