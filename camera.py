@@ -7,7 +7,7 @@ cap = cv2.VideoCapture(0)
 while(cap.isOpened()):
     # 1フレーム毎　読込み
     ret, frame = cap.read()
-    frame = cv2.resize(frame, (1920, 1080))
+    frame = cv2.resize(frame, (640, 480))
     # GUIに表示
     cv2.imshow("Open Camera", frame)
     # qキーが押されたら途中終了
