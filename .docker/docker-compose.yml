@@ -17,4 +17,3 @@ services:
         target: /root/.Xauthority.copy
       - ..:/ws
     network_mode: host
-    command: /bin/bash -c "python -B /ws/camera.py"
