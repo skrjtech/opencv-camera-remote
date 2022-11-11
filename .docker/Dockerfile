@@ -23,8 +23,7 @@ RUN python3 -m pip install selenium webdriver-manager beautifulsoup4
 RUN python3 -m pip install pyautogui python-xlib
 RUN DEBIAN_FRONTEND=noninteractive apt install -y python3-tk tk-dev
 # Coogle Chrome
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-    apt-get install -y ./google-chrome-stable_current_amd64.deb && \
-    rm google-chrome-stable_current_amd64.deb
+RUN sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
+    && sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
+    && sudo apt update && sudo apt install google-chrome-stable
 CMD [ "/bin/bash" ]
