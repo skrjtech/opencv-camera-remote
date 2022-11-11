@@ -9,9 +9,11 @@ services:
     restart: always
     environment:
       - DISPLAY=$DISPLAY
-    volumes:
+      - QT_X11_NO_MITSHM=1
+    devices:
       - /dev/video0:/dev/video0
       - /dev/video1:/dev/video1
+    volumes:
       - type: bind
         source: $HOME/.Xauthority
         target: /root/.Xauthority.copy
