@@ -5,7 +5,7 @@ RUN apt update && apt -y upgrade
 RUN apt-get update && apt-get -y upgrade
 # importante package
 RUN apt install -y software-properties-common
-RUN apt install -y sudo git fonts-takao ffmpeg wget
+RUN apt install -y sudo git fonts-takao ffmpeg wget v4l-utils
 # python 
 RUN apt install -y python3-pip 
 RUN apt install -y build-essential libssl-dev libffi-dev python3-dev
